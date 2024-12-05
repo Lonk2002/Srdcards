@@ -1,0 +1,19 @@
+{
+  "name": "sedcards",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.2"
+  },
+  "dependencies": {
+    "three": "^0.171.0"
+  }
+  
+}

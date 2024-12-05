@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sedcards</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-image: url('./assets/background.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+            .scroll-bar {
+            position: fixed;
+            right: 0.6vw;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 99vh;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            opacity: 1;
+            }
+
+            .scroll-thumb {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 33%;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            transition: background 0.3s;
+            opacity: 0.5;
+            }
+
+            .scroll-thumb:hover {
+            background: rgba(255, 255, 255, 0.8);
+            }
+            
+            .logo {
+                position: absolute;
+                top: 2vh; 
+                left: 2vw; 
+                width: min(150px, 20vw); 
+                height: min(60px, 8vh); 
+                margin: 0;
+                background-image: url('./assets/insight.png');
+                background-size: contain;
+                background-position: left top;
+                background-repeat: no-repeat;
+                pointer-events: none;  
+            }
+            .backButton {
+                position: absolute; 
+                top: 1.6vh;        
+                right: 2vw;       
+                color: white;      
+                background: none; 
+                border: none;      
+                font-size: 1.1em; 
+                cursor: pointer;    
+                pointer-events: auto; 
+                font-family: helvetica;
+                font-weight: 10;
+            }
+            .canvas-border {
+                position: absolute;
+                border: 0.5px solid #ffffff;
+                max-width: 95vw;
+                max-height: 88vh;
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                opacity: 0.5;
+                pointer-events: none;
+}
+
+            canvas {
+                max-width: 95vw;
+                max-height: 89vh;
+                border-radius: 20px;
+                opacity: 0.8;
+                -webkit-mask-image: linear-gradient(
+                    to top,
+                    transparent 0%,
+                    black 3%,
+                    black 95%,
+                    transparent 100%
+                );
+                mask-image: linear-gradient(
+                    to top,
+                    transparent 0%,
+                    black 3%,
+                    black 95%,
+                    transparent 100%
+                );
+            }
+        </style>
+    </head>
+    <body>
+        <div class="logo"></div>
+        <button id="backButton" class="backButton">OVERVIEW</button>
+        <div class="canvas-border"></div>
+        <div class="scroll-bar">
+        <div class="scroll-thumb"></div></div>
+        <canvas id="ThreeJSCanvas"></canvas>
+        <script src="./javascript/Main.js" type="module"></script>
+    </body>
+</html>
